@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-watch
+  namespace: image-watch
+  labels:
+    app: image-watch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: image-watch
+  template:
+    metadata:
+      name: image-watch
+      labels:
+        app: image-watch
+    spec:
+      containers:
+        - name: image-watch
+          image: florianisme/image-watch:latest
+          env:
+            - name: RUNTIME_MODE
+              value: "KUBERNETES"
+            - name: RELEASE_API_BASE_URL
+              value: "https://imagewatch.app"
+          resources:
+            requests:
+              cpu: '150m'
+              memory: '256Mi'
+            limits:
+              cpu: '300m'
+              memory: '256Mi'
+      serviceAccountName: image-watch-sa

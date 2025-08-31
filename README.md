@@ -15,10 +15,10 @@ ImageWatch client in a Kubernetes environment.
    ```bash
    git clone https://github.com/Florianisme/ImageWatch
     ```
-2. Review and customize the deployment files as needed:
+2. Review and customize the deployment files as needed
 3. Deploy the service using kubectl:
    ```bash
-   kubectl apply -f plain/ -n releases-api
+   kubectl apply -f plain/
    ```
 4. Verify the deployment:
    ```bash

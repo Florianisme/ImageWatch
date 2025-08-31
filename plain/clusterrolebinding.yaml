@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: image-watch-binding
+subjects:
+  - kind: ServiceAccount
+    name: image-watch-sa
+    namespace: image-watch
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: image-watch-pod-metadata
+  apiGroup: rbac.authorization.k8s.io

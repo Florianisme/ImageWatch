@@ -1,6 +1,8 @@
 ## ImageWatch
 ImageWatch is a service that checks for outdated Images of services running in a Kubernetes cluster.
 
+![Image List UI](./media/ui_image_overview.png)
+
 ## Deployment
 This repository contains the deployment definitions for running the 
 ImageWatch client in a Kubernetes environment.

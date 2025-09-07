@@ -1,6 +1,13 @@
-## ImageWatch
-ImageWatch is a service that checks for outdated Images of services running in a Kubernetes cluster.
+<div style="text-align: center;">
+  <img src="./media/logo.svg" width="100" alt="logo"/>
+</div>
 
+## ImageWatch
+ImageWatch is a robust and easy-to-deploy solution designed to keep your Docker images up-to-date and
+secure. It proactively scans your local Kubernetes clusters and Docker Swarm installations,
+identifying any outdated image tags
+<br><br>
+Screenshot from the client UI:
 ![Image List UI](./media/ui_image_overview.png)
 
 ## Deployment

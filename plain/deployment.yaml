@@ -22,7 +22,7 @@ spec:
           env:
             - name: RUNTIME_MODE
               value: "KUBERNETES"
-            - name: RELEASE_API_BASE_URL
+            - name: IMAGEWATCH_API_KEY
               value: "https://imagewatch.app"
           resources:
             requests:

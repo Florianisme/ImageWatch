@@ -1,0 +1,23 @@
+name: "image-watch-client"
+
+services:
+  image-watch-client:
+    image: florianisme/image-watch:0.0.6
+    restart: unless-stopped
+    ports:
+      - "8090:8090"
+    environment:
+      IMAGEWATCH_API_KEY: "<YOUR_API_KEY>"
+      DOCKER_HOST: "unix:///var/run/docker.sock"
+    deploy:
+      resources:
+        reservations:
+          cpus: "0.1"
+          memory: 256m
+        limits:
+          cpus: "1"
+          memory: 256m
+    volumes:
+      - source: /var/run/docker.sock
+        target: /var/run/docker.sock
+        type: bind

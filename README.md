@@ -10,17 +10,18 @@ identifying any outdated image tags
 Screenshot from the client UI:
 ![Image List UI](./media/ui_image_overview.png)
 
+## Getting started
+To get started with ImageWatch, signup on [ImageWatch.app](http://imagewatch.app) and follow these steps:
+
 ## Deployment
 This repository contains the deployment definitions for running the 
-ImageWatch client in a Kubernetes environment.
+ImageWatch client in a [Kubernetes environment](#kubernetes-deployment) and on [Docker, see below](#docker-deployment).
 
+## Kubernetes Deployment
 ### Prerequisites
 - A Kubernetes cluster (at least version 1.17)
 - kubectl command-line tool configured to interact with your cluster
 - Helm (optional, for managing deployments)
-
-## Getting started
-To get started with ImageWatch, signup on [ImageWatch.app](http://imagewatch.app) and follow these steps:
 
 ### Deployment Steps
 1. Clone the repository:
@@ -28,13 +29,34 @@ To get started with ImageWatch, signup on [ImageWatch.app](http://imagewatch.app
    git clone https://github.com/Florianisme/ImageWatch
     ```
 2. Review and customize the deployment files as needed
-   1. Add your license key to the `plain/deployment.yaml` file in the `IMAGEWATCH_API_KEY` environment variable.
+   1. Add your license key to the `plain/kubernetes/deployment.yaml` file in the `IMAGEWATCH_API_KEY` environment variable.
 3. Deploy the service using kubectl:
    ```bash
-   kubectl apply -f plain/
+   kubectl apply -f plain/kubernetes/
    ```
 4. Verify the deployment:
    ```bash
    kubectl get pods -n image-watch
    ```
 5. Access the ImageWatch client UI on port 8090 of the deployed pod or set up a service to expose it externally.
+
+## Docker Deployment
+### Prerequisites
+- Docker Compose
+
+### Deployment Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Florianisme/ImageWatch
+    ```
+2. Review and customize the deployment files as needed
+    1. Add your license key to the `plain/docker/docker-compose.yaml` file in the `IMAGEWATCH_API_KEY` environment variable.
+3. Deploy the service using Docker Compose:
+   ```bash
+   docker compose -f plain/docker/docker-compose.yaml up -d
+   ```
+4. Verify the deployment:
+   ```bash
+   docker compose -f plain/docker/docker-compose.yaml ps
+   ```
+5. Access the ImageWatch client UI on port 8090 of the deployed container.

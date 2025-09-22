@@ -23,7 +23,7 @@ spec:
             - name: RUNTIME_MODE
               value: "KUBERNETES"
             - name: IMAGEWATCH_API_KEY
-              value: "https://imagewatch.app"
+              value: "<YOUR_API_KEY>"
           resources:
             requests:
               cpu: '150m'

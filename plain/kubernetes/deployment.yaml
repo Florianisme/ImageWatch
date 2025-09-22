@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: image-watch
-          image: florianisme/image-watch:0.0.6
+          image: florianisme/image-watch:0.0.7
           env:
             - name: RUNTIME_MODE
               value: "KUBERNETES"

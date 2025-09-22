@@ -2,7 +2,7 @@ name: "image-watch-client"
 
 services:
   image-watch-client:
-    image: florianisme/image-watch:0.0.6
+    image: florianisme/image-watch:0.0.7
     restart: unless-stopped
     ports:
       - "8090:8090"
